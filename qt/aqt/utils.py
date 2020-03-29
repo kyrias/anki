@@ -24,7 +24,7 @@ if TYPE_CHECKING:
 
 def aqt_data_folder() -> str:
     # wheel install?
-    dir = os.path.join(sys.prefix, "aqt_data")
+    dir = os.path.join(sys.prefix,"share", "aqt_data")
     if not os.path.exists(dir) or not os.listdir(dir):
         # running in place?
         dir = os.path.join(os.path.dirname(__file__), "..", "aqt_data")

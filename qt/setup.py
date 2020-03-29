@@ -8,7 +8,7 @@ import setuptools
 def package_files(directory):
     entries = []
     for (path, directories, filenames) in os.walk(directory):
-        entries.append((path, [os.path.join(path, f) for f in filenames]))
+        entries.append((os.path.join("share", path), [os.path.join(path, f) for f in filenames]))
     return entries
 
 
