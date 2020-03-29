@@ -90,7 +90,7 @@ buildhash:
 	fi
 
 .PHONY: develop
-develop: pyenv buildhash prepare
+develop: pyenv buildhash
 	@set -eu -o pipefail ${SHELLFLAGS}; \
 	. "${ACTIVATE_SCRIPT}"; \
 	for dir in $(DEVEL); do \

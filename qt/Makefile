@@ -64,7 +64,7 @@ TSDEPS := $(wildcard ts/src/*.ts) $(wildcard ts/scss/*.scss)
 	python -m black aqt/gui_hooks.py
 	@touch $@
 
-BUILD_STEPS := .build/vernum .build/run-deps .build/dev-deps .build/js .build/ui aqt/buildinfo.py .build/hooks .build/i18n
+BUILD_STEPS := .build/vernum .build/js .build/ui aqt/buildinfo.py .build/i18n
 
 # Checking
 ######################

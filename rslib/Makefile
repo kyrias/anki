@@ -25,7 +25,7 @@ fix:
 clean:
 	rm -rf .build target
 
-develop: .build/vernum ftl/repo
+develop: .build/vernum
 
 ftl/repo:
 	(cd ftl && ./scripts/fetch-latest-translations)

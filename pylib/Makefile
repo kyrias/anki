@@ -41,7 +41,7 @@ all: check
 
 PROTODEPS := ../proto/backend.proto ../proto/fluent.proto
 
-.build/py-proto: .build/dev-deps $(PROTODEPS)
+.build/py-proto: $(PROTODEPS)
 	protoc --proto_path=../proto --python_out=anki --mypy_out=anki $(PROTODEPS)
 	perl -i'' -pe 's/from fluent_pb2/from anki.fluent_pb2/' anki/backend_pb2.pyi
 	perl -i'' -pe 's/import fluent_pb2/import anki.fluent_pb2/' anki/backend_pb2.py
@@ -54,7 +54,7 @@ PROTODEPS := ../proto/backend.proto ../proto/fluent.proto
 	python -m black -t py36 anki/hooks.py
 	@touch $@
 
-BUILD_STEPS := .build/vernum .build/run-deps .build/dev-deps anki/buildinfo.py .build/py-proto .build/hooks
+BUILD_STEPS := .build/vernum .build/run-deps .build/dev-deps anki/buildinfo.py .build/py-proto
 
 # Checking
 ######################

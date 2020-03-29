@@ -52,7 +52,7 @@ all: develop
 
 develop: .build/develop
 
-DEPS := .build/tools .build/vernum ../meta/buildhash \
+DEPS := .build/vernum ../meta/buildhash \
 	$(wildcard $(QT_FTL_TEMPLATES)/*.ftl) \
 	$(wildcard $(QT_FTL_LOCALES)/*/*.ftl) \
 	$(shell "${FIND}" ../rslib/src -name '*.rs' -or -name '*.sql') $(wildcard ../proto/*) \
