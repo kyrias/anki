@@ -105,6 +105,8 @@ build: .build/build
 
 .build/build: $(BUILD_STEPS) $(CHECKDEPS)
 	rm -rf dist build
+	python setup.py build
+	python -O -m compileall .
 	python setup.py -q bdist_wheel
 	rsync -a dist/*.whl ../dist/
 	touch $@

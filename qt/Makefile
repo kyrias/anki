@@ -137,6 +137,8 @@ build: .build/build
 .build/build: $(BUILD_STEPS) $(CHECKDEPS) $(wildcard ../ts/dist/*)
 	rm -rf dist build
 	rsync -a ../ts/dist/ aqt_data/web/
+	python setup.py build
+	python -O -m compileall .
 	python setup.py -q bdist_wheel
 	rsync -a dist/*.whl ../dist/
 	touch $@
