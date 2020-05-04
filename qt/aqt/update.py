@@ -33,6 +33,8 @@ class LatestVersionFinder(QThread):
         }
 
     def run(self):
+        return
+
         if not self.config["updates"]:
             return
         d = self._data()
